@@ -1,3 +1,6 @@
+# Alışveriş listesi tasarlıyoruz.
+# Kullanıcı ürün ekleyebilecek, tüm ürünleri görebilecek ve silebiliyor olacak. Ayrıca sistemden çıkışta yapabiliyor.
+
 import os
 listedb = []
 

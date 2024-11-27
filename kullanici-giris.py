@@ -1,3 +1,5 @@
+# Kullanıcı giriş sistemi yazıyoruz.
+# kullanıcı adı ve şifre yanlış ise, doğru şifre girilene kadar döngü her zaman tekrar çalışacak.
 dogru_sifre = "admin"
 girilen_sifre = ""
 k_adi = "admin"
