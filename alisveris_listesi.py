@@ -30,7 +30,7 @@ def liste():
 
 def uekle():
     os.system('cls')
-    urun = input("Eklemek istediğiniz ürün(geri dönmek için 0/1): ")
+    urun = input("Eklemek istediğiniz ürün(geri dönmek için 0/1): ").upper()
     if urun == "0":
         os.system('cls')
     elif urun == "1":
@@ -42,7 +42,7 @@ def uekle():
 
 def usil():
     os.system('cls')
-    urun = input("Silmek istediğiniz ürün(hepsi için 0, geri dönmek için 1): ")
+    urun = input("Silmek istediğiniz ürün(hepsi için 0, geri dönmek için 1): ").upper()
     if urun == "0":
         os.system('cls')
         sorgu = input("Alışveriş listenizdeki tüm ürünleri silmek istediğinize emin misiniz? (Evet/Hayır Yalnızca E/H): ")
