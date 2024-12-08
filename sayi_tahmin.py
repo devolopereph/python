@@ -3,6 +3,7 @@
 import random, os
 os.system('cls')
 
+# Bir ile 50 arasında rastgele bir sayı oluşturturuyoruz.
 sayi = random.randint(1,50)
 tahmin = 0
 print("Aklımdan 1 ve 50 arasında olan bir sayı tuttum. Bakalım bulabilecek misin?")
