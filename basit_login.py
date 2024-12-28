@@ -7,11 +7,9 @@ password = 'admin'
 usernameinput = input("kullanici adinizi giriniz: ")
 passwordinput = input("kullanici sifrenizi giriniz: ")
 
-#Şartlar doğruysa, isloggedin = True olacaktır ve hoş geldiniz mesajı gösterilecektir.
-isloggedin = (usernameinput == username) and (passwordinput == password)
-
-if isloggedin:
+#Şartlar doğruysa, if, yani eğer çalışacaktır ve hoş geldiniz mesajı gösterilecektir.
+if (usernameinput == username) and (passwordinput == password):
     print("hos geldiniz.")
-#Eğer, isloggedin == True değil ise, yani kullanıcı adı veya şifre yanlış ise, aşağdıaki else komutu çalışacaktır.
+#Eğer, ifde belirttiğimiz şartlar doğru değil ise, else komutu çalışacaktır.
 else:
     print("lutfen bilgilerinizi kontrol ediniz.")
