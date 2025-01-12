@@ -16,7 +16,7 @@ while True:
             okunan_sayfa += int(input(f"Okumuş olduğunuz sayfa sayısını giriniz: "))
         elif okunan_sayfa >= toplam_sayfa:
             os.system('cls')
-            print(f"{kitap_ad} adlı kitabı bitirdiniz, tebrikler.")
+            print(f"{toplam_sayfa} sayfalı {kitap_ad} adlı kitabı bitirdiniz, tebrikler.")
             print("Döngü yeniden başlatılıyor...")
             break
         else:
