@@ -5,4 +5,4 @@ def tambolenleribulma(sayi):
         if sayi %i == 0:
             tambolenler.append(i)
     return tambolenler
-print(tambolenleribulma(int(input('sayiyi giriniz: '))))
+print(tambolenleribulma(int(input('Sayıyı giriniz: '))))
