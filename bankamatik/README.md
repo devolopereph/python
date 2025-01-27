@@ -1,9 +1,6 @@
 Python'da basit düzey bankamatik kodluyorum ve POSTRESQL ile veritabanına bağlayacağız, psycopg2 kütüphanesi ile kullanacağız.
 
-UYARI: Proje tamamen hazır değildir ve kişisel bir projedir.
-https://www.postgresql.org/
-https://www.pgadmin.org/download/
-
+UYARI: Proje tamamen hazır değildir ve kişisel bir projedir. Bu haliyle kullanılabilmektedir.
 
 # Bankamatik
 
@@ -22,7 +19,7 @@ POSTRESQL ve Python kullanarak bankamatik uygulaması geliştiriyoruz.
 ```
 https://github.com/devolopereph/python/tree/main/bankamatik
 Projenin ana dosyalarını indiriniz.
-veritabani klasöründe bankamatik.backup adlı dosyayı PGADMIN4 kullanarak veritabanınıza yükleyiniz.
+veritabani klasöründe bankamatik.backup adlı veritabanı yedeğini PGADMIN4 kullanarak veritabanınıza yükleyiniz.
 ```
 ## Başlangıç
 ```
