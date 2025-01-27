@@ -1,10 +1,9 @@
-Python'da basit düzey bankamatik kodluyorum ve POSTRESQL ile veritabanına bağlayacağız, psycopg2 kütüphanesi ile kullanacağız.
-
-UYARI: Proje tamamen hazır değildir ve kişisel bir projedir. Bu haliyle kullanılabilmektedir.
-
 # Bankamatik
 
 POSTRESQL ve Python kullanarak bankamatik uygulaması geliştiriyoruz.
+psycopg2 kütüphanesi ile kullanacağız.
+
+UYARI: Proje tamamen hazır değildir ve kişisel bir projedir. Bu haliyle kullanılabilmektedir.
 ## Kurulum
 
 Öncelikle PYTHON, POSTRESQL ve PGADMIN4 kurulumunu yapınız.
