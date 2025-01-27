@@ -20,6 +20,7 @@ POSTRESQL ve Python kullanarak bankamatik uygulaması geliştiriyoruz.
 https://github.com/devolopereph/python/tree/main/bankamatik
 Projenin ana dosyalarını indiriniz.
 veritabani klasöründe bankamatik.backup adlı veritabanı yedeğini PGADMIN4 kullanarak veritabanınıza yükleyiniz.
+bankamatik.py dosyasındaki 3. satırdaki connect verilerini kendi sisteminize ve veritabanı bilgilerinize göre düzenleyiniz.
 ```
 ## Başlangıç
 ```
