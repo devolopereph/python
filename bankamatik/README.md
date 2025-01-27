@@ -1,8 +1,7 @@
 # Bankamatik
 
 POSTRESQL ve Python kullanarak bankamatik uygulaması geliştiriyoruz.
-psycopg2 kütüphanesi ile kullanacağız.
-
+Psycopg2 gereklidir.
 UYARI: Proje tamamen hazır değildir ve kişisel bir projedir. Bu haliyle kullanılabilmektedir.
 ## Kurulum
 
