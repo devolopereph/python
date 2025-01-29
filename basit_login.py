@@ -4,12 +4,12 @@ username = 'admin'
 password = 'admin'
 
 #Kullanıcı bilgilerini sorduğumuz kısım.
-usernameinput = input("kullanici adinizi giriniz: ")
-passwordinput = input("kullanici sifrenizi giriniz: ")
+usernameinput = input("Kullanıcı adınızı giriniz: ")
+passwordinput = input("Kullanıcı şifrenizi giriniz: ")
 
 #Şartlar doğruysa, if, yani eğer çalışacaktır ve hoş geldiniz mesajı gösterilecektir.
 if (usernameinput == username) and (passwordinput == password):
-    print("hos geldiniz.")
+    print("Hoş geldiniz.")
 #Eğer, ifde belirttiğimiz şartlar doğru değil ise, else komutu çalışacaktır.
 else:
-    print("lutfen bilgilerinizi kontrol ediniz.")
+    print("Lütfen bilgilerinizi kontrol ediniz.")
