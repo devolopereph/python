@@ -7,6 +7,7 @@ listedb = []
 def menu():
     print("---MENÜ---\n1-Listeyi Görüntüle\n2-Ürün Ekle\n3-Ürün Sil\n4-Çıkış")
     secim = input("Seçim yapınız: ")
+    os.system('cls||clear')
     if secim == "1":
         liste()
     elif secim == "2":
@@ -19,39 +20,36 @@ def menu():
         print("Geçersiz seçim. Ana menüye yönlendiriliyorsunuz...")
 def liste():
         if not listedb:
-            os.system('cls')
+            os.system('cls||clear')
             print("Alışveriş listeniz boş. Ana menüye yönlendiriliyorsunuz.")
         else:
-            os.system('cls')
+            os.system('cls||clear')
             print("---Alışveriş Listeniz---")
             for urun in range(len(listedb)):
                 print(f"{urun}-: {listedb[urun]}")
 
 
 def uekle():
-    os.system('cls')
     urun = input("Eklemek istediğiniz ürün(geri dönmek için 0/1): ").upper()
+    os.system('cls||clear')
     if urun == "0":
-        os.system('cls')
+        print("Ana menüye yönlendiriliyorsunuz...")
     elif urun == "1":
-        os.system('cls')
+        print("Ana menüye yönlendiriliyorsunuz...")
     else:
         listedb.append(urun)
-        os.system('cls')
         print(f"{urun} başarıyla alışveriş listenize eklendi.")
 
 def usil():
-    os.system('cls')
     urun = input("Silmek istediğiniz ürün(hepsi için 0, geri dönmek için 1): ").upper()
+    os.system('cls||clear')
     if urun == "0":
-        os.system('cls')
         sorgu = input("Alışveriş listenizdeki tüm ürünleri silmek istediğinize emin misiniz? (Evet/Hayır Yalnızca E/H): ")
+        os.system('cls||clear')
         if sorgu.upper() == "E":
-            os.system('cls')
             listedb.clear()
             print("Alışveriş listenizdeki tüm ürünler silindi.")
         elif sorgu.upper() == "H":
-            os.system('cls')
             print("Tüm ürünleri silme işlemi iptal edildi. Ana menüye yönlendiriliyorsunuz...")
         else:
             print("Geçersiz seçim. Ana menüye yönlendiriliyorsunuz...")
@@ -61,10 +59,8 @@ def usil():
             listedb.remove(urun)
             print(f"{urun} başarıyla alışveriş listenizden silindi.")
     elif urun not in listedb:
-            os.system('cls')
             print("Silmek istediğiniz ürün alışveriş listenizde bulunamadı.")
     else:
-        os.system('cls')
         print("Geçersiz seçim. Ana menüye yönlendiriliyorsunuz.")
 
 while True:
