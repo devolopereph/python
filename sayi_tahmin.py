@@ -1,8 +1,6 @@
 # Sayı tahmin oyunu geliştiriyoruz, burada sistem otomatik olarak 1-50 arasında rastgele bir sayı belirleyecek.
 # Kullanıcı rastgele belirlenen doğru sayıyı bulana kadar döngümüz devam edecek.
-import random, os
-os.system('cls')
-
+import random
 # Bir ile 50 arasında rastgele bir sayı oluşturturuyoruz.
 sayi = random.randint(1,50)
 tahmin = 0
