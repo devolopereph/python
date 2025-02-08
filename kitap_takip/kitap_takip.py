@@ -13,6 +13,12 @@ class kitap_takip():
         terminal_temizle()
         kitap_ad = input("Kitap adını giriniz: ")
         toplam_sayfa = int(input(f"{kitap_ad} adlı kitabın toplam sayfa sayısını giriniz: "))
+        if (toplam_sayfa == 0) or (toplam_sayfa < 0):
+            while True:
+                print("Toplam sayfa sayısı 0'dan büyük olmalıdır.")
+                toplam_sayfa = int(input(f"{kitap_ad} adlı kitabın toplam sayfa sayısını giriniz: "))
+                if toplam_sayfa > 0:
+                    break
         cur.execute(f"UPDATE kullanici SET k_kitap_ad='{kitap_ad}', k_kitap_toplam_sayfa={toplam_sayfa},k_okunan_sayfa=0 WHERE k_kullaniciAdi='{self.kullanici_adi}'", (kitap_ad, toplam_sayfa))
         conn.commit()
         print(f"{menu_ayir()}\nKitap ekleme işlemi başarılı.\n{menu_ayir()}")
@@ -36,6 +42,12 @@ class kitap_takip():
             print(f"{menu_ayir()}\nOkumakta olduğunuz kitap bulunmamaktadır.\n{menu_ayir()}")
         elif kitap[0][0] < kitap[0][1]:
             okunan_sayfa = int(input(f"Okumuş olduğunuz sayfa sayısını giriniz: "))
+            if (okunan_sayfa == 0) or (okunan_sayfa < 0):
+                while True:
+                    print("Girilen sayfa sayısı 0'dan büyük olmalıdır.")
+                    okunan_sayfa = int(input(f"Okumuş olduğunuz sayfa sayısını giriniz: "))
+                    if okunan_sayfa > 0:
+                        break
             if okunan_sayfa+kitap[0][0] > kitap[0][1]:
                 print("Toplam sayfa sayısından fazla sayfa girdiniz.")
             else:
