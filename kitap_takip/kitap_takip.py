@@ -87,20 +87,26 @@ def giris_yap():
         else:
             print("Kullanıcı adı veya şifre hatalı.")
 
+def kayit_ol():
+    kullanici_adi = input("Kullanıcı adınızı giriniz: ")
+    if (type(kullanici_adi) == type(None)) or (kullanici_adi == "") or (kullanici_adi == " ") or (len(kullanici_adi) < 3 or len(kullanici_adi) > 20):
+        print("Kullanıcı adınız 3-20 karakter arasında olmalıdır.")
+        quit()
+    sifre = input("Şifrenizi giriniz(6 karakter olmalı): ")
+    if (len(sifre) > 6) or (len(sifre) < 6):
+        print("Şifreniz 6 karakter olmalıdır.")
+        quit()
+    cur.execute("INSERT INTO kullanici(k_kullaniciAdi, k_sifre) VALUES(%s, %s)", (kullanici_adi, sifre))
+    conn.commit()
+    print("Kayıt işlemi başarılı.")
+    giris_yap()
+
 def kayit_giris():
     terminal_temizle()
     print("1. Kayıt Ol\n2. Giriş Yap\n3. Çıkış")
     secim = int(input("Yapmak istediğiniz işlemi seçiniz(1-3): "))
     if secim == 1:
-        kullanici_adi = input("Kullanıcı adınızı giriniz: ")
-        sifre = input("Şifrenizi giriniz(6 karakter ile sınırlı): ")
-        if len(sifre) > 6:
-            print("Şifreniz 6 karakterden uzun olamaz.")
-            quit()
-        cur.execute("INSERT INTO kullanici(k_kullaniciAdi, k_sifre) VALUES(%s, %s)", (kullanici_adi, sifre))
-        conn.commit()
-        print("Kayıt işlemi başarılı.")
-        giris_yap()
+        kayit_ol()
     elif secim == 2:
         giris_yap()
     elif secim == 3:
