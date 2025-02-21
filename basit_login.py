@@ -11,4 +11,3 @@ while True:
     else:
         os.system('cls||clear')
         print("Kullanıcı adınız veya şifreniz yanlış. Lütfen tekrar deneyiniz.")
-        continue
