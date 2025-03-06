@@ -16,10 +16,10 @@ class Soru:
     def cevapKontrol(self, cevap):
         return self.cevap == cevap
     
-q1 = Soru("Python'da değişken tanımlamak için hangi sembol kullanılır?", ['=', '==', ':=', '==='], '=')
-q2 = Soru("Hangisi Python’da bir döngü türüdür?", ['if-else', 'while', 'elif', 'switch'], 'while')
-q3 = Soru("Python'da ekrana çıktı vermek için hangi fonksiyon kullanılır?", ['echo()', 'display()', 'print()', 'write()'], 'print()')
-q4 = Soru("Python'da koşullu ifadeler hangi anahtar kelimeyle başlar?", ['if', 'when', 'case', 'switch'], 'if')
+q1 = Soru("Python'da değişken tanımlamak için hangi sembol kullanılır?", ['A) =', 'B) ==', 'C) :=', 'D) ==='], 'A')
+q2 = Soru("Hangisi Python’da bir döngü türüdür?", ['A) if-else', 'B) while', 'C) elif', 'D) switch'], 'B')
+q3 = Soru("Python'da ekrana çıktı vermek için hangi fonksiyon kullanılır?", ['A) echo()', 'B) display()', 'C) print()', 'D) write()'], 'C')
+q4 = Soru("Python'da koşullu ifadeler hangi anahtar kelimeyle başlar?", ['A) if', 'B) when', 'C) case', 'D) switch'], 'A')
 
 soru_listesi = [q1,q2,q3,q4]
 tam_puan = 100
@@ -29,7 +29,7 @@ for i in range(len(soru_listesi)):
     os.system('cls||clear')
     soru_listesi[i].soruOku(i+1)
     print(f'Kalan soru: {i+1}/{len(soru_listesi)}')
-    if soru_listesi[i].cevapKontrol(input('Cevabınız: ')) == False:
+    if soru_listesi[i].cevapKontrol(input('Cevabınız: ').upper()) == False:
         tam_puan -= cikarilacak_puan
 os.system('cls||clear')
 print(f'Quiz sona erdi.\nPuanınız: {tam_puan}')
