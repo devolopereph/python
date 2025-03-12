@@ -16,12 +16,15 @@ class Soru:
     def cevapKontrol(self, cevap):
         return self.cevap == cevap
     
+
 q1 = Soru("Python'da değişken tanımlamak için hangi sembol kullanılır?", ['A) =', 'B) ==', 'C) :=', 'D) ==='], 'A')
 q2 = Soru("Hangisi Python’da bir döngü türüdür?", ['A) if-else', 'B) while', 'C) elif', 'D) switch'], 'B')
 q3 = Soru("Python'da ekrana çıktı vermek için hangi fonksiyon kullanılır?", ['A) echo()', 'B) display()', 'C) print()', 'D) write()'], 'C')
 q4 = Soru("Python'da koşullu ifadeler hangi anahtar kelimeyle başlar?", ['A) if', 'B) when', 'C) case', 'D) switch'], 'A')
+q5 = Soru("Python'da bir değişkenin türünü öğrenmek için hangi fonksiyon kullanılır?", ['A) type()', 'B)'
+' typeof()', 'C) gettype()', 'D) typeof'], 'A')
 
-soru_listesi = [q1,q2,q3,q4]
+soru_listesi = [q1,q2,q3,q4,q5]
 tam_puan = 100
 cikarilacak_puan=tam_puan//(len(soru_listesi))
 
