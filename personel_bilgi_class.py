@@ -21,9 +21,10 @@ class Personel:
     def bolum_degistir(self, yeni_bolum):
         self.bolum = yeni_bolum
 
-eleman1 = Personel('Devoloper Eph',2000,'Güvenlik', 20000)
+eleman1 = Personel('Devoloper Eph',2000,'Güvenlik', 35000)
 eleman1.bilgi()
 eleman1.maas_arttir(5000)
 eleman1.maas_belirle(30000)
 eleman1.bolum_degistir('Yazılım')
+eleman1.maas_azalt(10000)
 eleman1.bilgi()
