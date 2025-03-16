@@ -7,30 +7,32 @@ cur = conn.cursor()
 def giris_yap():
         global admission,k_kimlik_no
         cur.execute(f"SELECT hesap_kimlik_no FROM hesaplar")
-        giris_kimlik_no=input('Kimlik numaranızı giriniz: ')
-        dbhesapkNo = cur.fetchall()
-        dbhesapkNo = [item[0] for item in dbhesapkNo]
-        if giris_kimlik_no in dbhesapkNo :
-            cur.execute(f"SELECT hesap_sifre FROM hesaplar WHERE hesap_kimlik_no='{giris_kimlik_no}';")
-            dbhesapSifre = cur.fetchone()
-            giris_hesap_sifre=input('Hesap şifrenizi giriniz: ')
-            if giris_hesap_sifre == dbhesapSifre[0]:
-                cur.execute(f"SELECT hesap_ad_soyad FROM hesaplar WHERE hesap_kimlik_no='{giris_kimlik_no}';")
-                gy_hesap = cur.fetchone()
-                terminal_temizle()
-                k_kimlik_no = giris_kimlik_no
-                admission = True
-                print('Başarılı giriş. Hesaba yönlendiriliyor...')
-                print(f'Hoş geldin {gy_hesap[0]}!')
-
-            else:
-                terminal_temizle()
-                print('Geçersiz şifre.')
-                giris_yap()
-        else:
-                terminal_temizle()
-                print('Kimlik numarası bulunamadı.')
-                giris_yap()
+        deneme = 1
+        while True:
+                giris_kimlik_no=input('Kimlik numaranızı giriniz: ')
+                giris_hesap_sifre=input('Hesap şifrenizi giriniz: ')
+                dbhesapkNo = cur.fetchall()
+                dbhesapkNo = [item[0] for item in dbhesapkNo]
+                if giris_kimlik_no in dbhesapkNo :
+                    cur.execute(f"SELECT hesap_sifre FROM hesaplar WHERE hesap_kimlik_no='{giris_kimlik_no}';")
+                    dbhesapSifre = cur.fetchone()
+                    if giris_hesap_sifre == dbhesapSifre[0]:
+                        cur.execute(f"SELECT hesap_ad_soyad FROM hesaplar WHERE hesap_kimlik_no='{giris_kimlik_no}';")
+                        gy_hesap = cur.fetchone()
+                        terminal_temizle()
+                        k_kimlik_no = giris_kimlik_no
+                        admission = True
+                        print('Başarılı giriş. Hesaba yönlendiriliyor...')
+                        print(f'Hoş geldin {gy_hesap[0]}!')
+                        break
+                elif deneme==3:
+                    terminal_temizle()
+                    print('3 defa hatalı giriş yaptınız. Lütfen daha sonra tekrar deneyiniz.')
+                    quit()
+                else:
+                    deneme += 1
+                    terminal_temizle()
+                    print('Kimlik numarası veya şifre yanlış.')  
 
 def sozlesme_kayit_onaylama():
     global k_adSoyad, k_tel, k_eposta,k_sifre,k_kimlik_no,admission,girisK_no
