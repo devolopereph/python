@@ -154,20 +154,16 @@ class bankamatik():
                     else:
                         print("Hatalı giriş yaptınız, miktar 0'dan büyük olmalı")
                 else:
-                    print('IBAN numarası veya ad soyad hatalı.')
+                    print('IBAN numarası veya IBAN sahibinin bilgileri hatalı.')
         else:
             print('İban bulunamadı.')
 
     def para_gonder(self):
-        print(f'PARA GÖNDERME İŞLEMLERİ\n{menu_ayir()}\n1-Yabancı Hesap Numarasına Para Gönder\n2-Kaydedilen Hesap Numaralarına Para Gönder\n3-Kaydedilen Hesap Numaraları\n4-Ana Menüye Dön')
+        print(f'PARA GÖNDERME İŞLEMLERİ\n{menu_ayir()}\n1-Yabancı Hesap Numarasına Para Gönder\n2-Ana Menüye Dön')
         secim = input('Seçim yapınız:(1-4): ')
         if secim == '1':
             bankamatik.y_no_para_gonder(self) 
         elif secim == '2':
-            print('') # k_no_para_gonder()
-        elif secim == '3':
-            print('')  # kaydedilen_hesap_numaralari()
-        elif secim == '4':
             terminal_temizle()
         else:
             print('Hatalı giriş yaptınız.')    
