@@ -229,38 +229,37 @@ class bankamatik():
         else:
             print('Hatalı giriş yaptınız.')
 
-
 #CLASS SONU
 def giris_yap():
-        cur.execute(f"SELECT hesap_kimlik_no FROM hesaplar")
-        deneme = 1
-        while True:
-                global admission, kimlik_no
-                giris_kimlik_no=input('Kimlik numaranızı giriniz: ')
-                giris_hesap_sifre=input('Hesap şifrenizi giriniz: ')
-                dbhesapkNo = cur.fetchall()
-                dbhesapkNo = [item[0] for item in dbhesapkNo]
-                if giris_kimlik_no in dbhesapkNo :
-                    cur.execute(f"SELECT hesap_sifre FROM hesaplar WHERE hesap_kimlik_no='{giris_kimlik_no}';")
-                    dbhesapSifre = cur.fetchone()
-                    if giris_hesap_sifre == dbhesapSifre[0]:
-                        cur.execute(f"SELECT hesap_ad_soyad FROM hesaplar WHERE hesap_kimlik_no='{giris_kimlik_no}';")
-                        gy_hesap = cur.fetchone()
-                        terminal_temizle()
-                        admission = True
-                        kimlik_no = giris_kimlik_no
-                        print('Başarılı giriş. Hesaba yönlendiriliyor...')
-                        print(f'Hoş geldin {gy_hesap[0]}!')
-                        bankamatik(giris_kimlik_no)
-                        break
-                elif deneme==3:
+    cur.execute(f"SELECT hesap_kimlik_no FROM hesaplar")
+    deneme = 1
+    while True:
+            global admission, kimlik_no
+            giris_kimlik_no=input('Kimlik numaranızı giriniz: ')
+            giris_hesap_sifre=input('Hesap şifrenizi giriniz: ')
+            dbhesapkNo = cur.fetchall()
+            dbhesapkNo = [item[0] for item in dbhesapkNo]
+            if giris_kimlik_no in dbhesapkNo :
+                cur.execute(f"SELECT hesap_sifre FROM hesaplar WHERE hesap_kimlik_no='{giris_kimlik_no}';")
+                dbhesapSifre = cur.fetchone()
+                if giris_hesap_sifre == dbhesapSifre[0]:
+                    cur.execute(f"SELECT hesap_ad_soyad FROM hesaplar WHERE hesap_kimlik_no='{giris_kimlik_no}';")
+                    gy_hesap = cur.fetchone()
+                    terminal_temizle()
+                    admission = True
+                    kimlik_no = giris_kimlik_no
+                    print('Başarılı giriş. Hesaba yönlendiriliyor...')
+                    print(f'Hoş geldin {gy_hesap[0]}!')
+                    bankamatik(giris_kimlik_no)
+                    break
+            elif deneme==3:
                     terminal_temizle()
                     print('3 defa hatalı giriş yaptınız. Lütfen daha sonra tekrar deneyiniz.')
                     quit()
-                else:
-                    deneme += 1
-                    terminal_temizle()
-                    print('Kimlik numarası veya şifre yanlış.')  
+            else:
+                deneme += 1
+                terminal_temizle()
+                print('Kimlik numarası veya şifre yanlış.')  
 
 def sozlesme_kayit_onaylama():
     global k_adSoyad, k_tel, k_eposta,k_sifre,k_kimlik_no,admission,girisK_no
@@ -326,8 +325,6 @@ def varsayilan_menu():
     else:
         print('Hatalı giriş yapıldı.')
         varsayilan_menu()
-
-
 
 while True:
     if admission == True:
