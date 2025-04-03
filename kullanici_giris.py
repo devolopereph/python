@@ -11,7 +11,5 @@ while dogru_sifre != girilen_sifre and k_adi != girilen_k_adi:
     girilen_sifre = input("Kullanıcı şifrenizi giriniz: ")
     if dogru_sifre == girilen_sifre and k_adi == girilen_k_adi:
         print("Kullanıcı doğrulandı. Hoş geldiniz, sisteme giriş yapılıyor...")
-        break
     else:
         print("Hatalı giriş yaptınız, lütfen tekrar deneyiniz.")
-        continue
